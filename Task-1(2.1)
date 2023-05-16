@@ -1,0 +1,28 @@
+SELECT name, surname FROM student WHERE (score >= 4 AND score <= 4.5); 
+
+SELECT * FROM student WHERE CAST(n_group as text) LIKE '3%'; 
+
+SELECT * FROM student ORDER BY n_group DESC, name ASC; 
+
+SELECT * FROM student WHERE(score > 4) ORDER BY score DESC; 
+
+SELECT name, risk FROM hobby LIMIT 2; 
+
+SELECT student_id, hobby_id  FROM student_hobby WHERE date_start BETWEEN '1994-01-01' AND '2001-01-01' AND date_finishIS IS NOT NULL; 
+
+SELECT * FROM student WHERE(score > 4.5) ORDER BY score DESC; 
+
+SELECT * FROM student ORDER BY score DESC LIMIT 5; 
+
+SELECT name, 
+CASE 
+WHEN risk >= 8 THEN 'очень высокий риск' 
+WHEN risk >= 6 and risk < 8 THEN 'высокий риск' 
+WHEN risk >=4 and risk < 6 THEN 'средний риск' 
+WHEN risk >= 2 and risk < 4 THEN 'низкий риск' 
+When risk < 2 THEN 'очень низкий риск' 
+ELSE 'Вероятна ошибка !' 
+End risk_category 
+FROM hobby; 
+
+SELECT name, risk FROM hobby ORDER BY risk DESC LIMIT 3;
